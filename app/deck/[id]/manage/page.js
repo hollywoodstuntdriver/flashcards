@@ -1,9 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getDeck, upsertDeck, exportDeck } from '@/lib/storage';
+
+function AutoTextarea({ value, onChange, placeholder, className, style }) {
+  const ref = useRef(null);
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.height = 'auto';
+      ref.current.style.height = ref.current.scrollHeight + 'px';
+    }
+  }, [value]);
+  return (
+    <textarea
+      ref={ref}
+      value={value}
+      onChange={onChange}
+      placeholder={placeholder}
+      rows={1}
+      className={className}
+      style={{ ...style, overflow: 'hidden' }}
+    />
+  );
+}
 
 export default function ManageDeck() {
   const { id } = useParams();
@@ -138,20 +159,18 @@ export default function ManageDeck() {
                 <div className="flex gap-2 mb-2">
                   <div className="flex-1">
                     <label className="text-xs block mb-1" style={{ color: 'var(--muted)' }}>front</label>
-                    <textarea
+                    <AutoTextarea
                       value={card.front}
                       onChange={(e) => updateCard(card.id, { front: e.target.value })}
-                      rows={2}
                       className="w-full px-3 py-2 text-sm rounded border bg-transparent resize-none"
                       style={{ borderColor: 'var(--border2)', color: 'var(--text)' }}
                     />
                   </div>
                   <div className="flex-1">
                     <label className="text-xs block mb-1" style={{ color: 'var(--muted)' }}>back</label>
-                    <textarea
+                    <AutoTextarea
                       value={card.back}
                       onChange={(e) => updateCard(card.id, { back: e.target.value })}
-                      rows={2}
                       className="w-full px-3 py-2 text-sm rounded border bg-transparent resize-none"
                       style={{ borderColor: 'var(--border2)', color: 'var(--text)' }}
                     />
@@ -210,22 +229,20 @@ export default function ManageDeck() {
         <div className="flex gap-2 mb-3">
           <div className="flex-1">
             <label className="text-xs block mb-1" style={{ color: 'var(--muted)' }}>front</label>
-            <textarea
+            <AutoTextarea
               value={newFront}
               onChange={(e) => setNewFront(e.target.value)}
               placeholder="Question"
-              rows={2}
               className="w-full px-3 py-2 text-sm rounded border bg-transparent resize-none"
               style={{ borderColor: 'var(--border2)', color: 'var(--text)' }}
             />
           </div>
           <div className="flex-1">
             <label className="text-xs block mb-1" style={{ color: 'var(--muted)' }}>back</label>
-            <textarea
+            <AutoTextarea
               value={newBack}
               onChange={(e) => setNewBack(e.target.value)}
               placeholder="Answer"
-              rows={2}
               className="w-full px-3 py-2 text-sm rounded border bg-transparent resize-none"
               style={{ borderColor: 'var(--border2)', color: 'var(--text)' }}
             />
