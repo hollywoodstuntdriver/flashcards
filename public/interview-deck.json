@@ -1,0 +1,393 @@
+{
+  "id": "interview-prep-btsg",
+  "name": "Interview Prep",
+  "description": "Full Q&A for sales AE interviews — verbatim",
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "cards": [
+    {
+      "id": "ip-01",
+      "front": "Tell me about yourself.",
+      "back": "I'm a closer. Four years in B2B SaaS, full-cycle, mostly mid-market. Most recent: Leading growth at Hypertide — an email deliverability SaaS. I'm the only seller, ran the cycle on 500-plus customers in the last twelve months, top deals in the $30-35K MRR range. Before that, Mid-Market AE at RemoteLock — 111% of an $800K quota selling access control into multifamily, ran 9-12 month enterprise cycles alongside faster mid-market deals. Started in proptech at Latch, promoted from inside sales to AE before the new CEO cleared the team.\n\nWhat I'm best at is discovery and frame control — making a buyer feel the cost of their own inaction so they sell themselves. That's been the through-line whether I'm closing a $5K SMB deal in two weeks or a $96K enterprise deal across a seven-month cycle with four stakeholders.\n\nThe reason I'm here — I've spent the last year wearing five hats at a startup, and the hats that aren't pure selling eat into revenue-generating time. I want to be 100% in the closer seat at a company with a real product and a defined territory. That's an AE role at a more mature company, which is why I'm talking to you.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-02",
+      "front": "How'd you build Hypertide?",
+      "back": "Two motions running in parallel.\n\nThe volume layer was high-velocity SMB — short discovery, focused demos, fast close. I was running 8-12 demos a week and closing about half on that segment. Pre-call qualification was tight, so by the time someone hit my calendar they had real pain and budget. I wasn't wasting cycles on tire-kickers.\n\nThe asymmetric layer was referrals. Our highest-converting channel by a wide margin. I got obsessed with the top 10 customers — their experience had to be perfect — because in cold email tooling the top 1% of operators are the gospel for everyone else. One reference from them converts better than any outbound sequence. So I protected that relationship layer religiously and let it compound. That's where the bigger deals came from.\n\nThe whales were a different motion entirely — 60-90 day cycles, real buying committees, heavy multi-threading. Ran those in parallel with the volume work.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-03",
+      "front": "What does a Head of Growth do? (short answer)",
+      "back": "In a startup context, it means I own the number end to end — generate pipeline, run the full sales cycle, and make sure clients stay and expand. I'm the whole revenue function. Which is why I'm here — I've proven I can build it from scratch, but I want a team around me and a dedicated patch where I can just sell.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-04",
+      "front": "Why do you want to leave?",
+      "back": "I wear too many hats, and they eat into revenue-generating time. I've built the system, I've proven the model — now I want to be 100% in the sales seat. Onboarding, CS, ops — those are important, but they're not where I'm most dangerous.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-05",
+      "front": "Why this company? (proptech story)",
+      "back": "I spent years in proptech — knew the ICP, had the network, consistently hit quota. But I went to enough conferences and noticed something: everyone else was a lifer. Truly passionate about the industry. I wasn't. So I looked at my resume and thought — if I stay here another two years, this is what I'm known for. That's not the story I want to tell. So I got deliberate. Found someone I'd done contract work with, trusted him, believed in what he was building, and made the jump. That reset worked. Now I'm looking at your ICP, your push into [market], and the same instinct is firing — this is the logical next move.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-06",
+      "front": "How do you run discovery?",
+      "back": "The skill gap between the top rep and the average rep is discovery — specifically, the ability to make a buyer feel the cost of their own inaction. Most reps diagnose pain and pitch. The best reps sit in the pain long enough that the buyer sells themselves.\n\nMy process: research the account before the first call, come in with a hypothesis about their problem, spend the first conversation testing it. I'm not asking 'what are your challenges' — I'm saying 'based on your stack and your stage, here's where I'd guess you're losing time. Tell me where I'm wrong.' That gets to real pain in five minutes instead of thirty.\n\nFrom there, I'm not leaving the call without three things: a number tied to the problem, the actual decision-maker named, and a budget conversation. If I don't have those, it stays unqualified.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-07",
+      "front": "Strength?",
+      "back": "1. \"What sets me apart is my ability to create urgency and drive deals forward when others get stuck.\"\n\n2. \"I have systems. Most reps wing it — best effort every call. I've built processes for prospecting, discovery, follow-up, and I use tools like Claude and Lovable to run them at scale. For a PLG motion where inbound volume is high, you don't need a grinder — you need someone efficient and strategic. That's the edge I bring.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-08",
+      "front": "Weakness?",
+      "back": "1. \"I can over-engineer the process when I should just be in the market. I'll spend time building a system that could be a sequence I just send. I've gotten better at knowing when to build and when to execute, but it's a real tension I manage.\"\n\n2. \"I sometimes push too hard to get deals closed, but I'm learning to time it better. I'd get in front of accounts that checked every box, have too much conviction in our ability to move the needle — and I'd pitch instead of guide. Lost enough deals that way. Now I bring prospects to my conclusions by playing naive and asking pre-emptive open-ended questions. I guide them to say what I used to spit out myself.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-09",
+      "front": "Walk me through your sales process.",
+      "back": "Everything starts with discovery — that's where I win or lose the deal. I research the account before the first call, come in with a hypothesis about their problem, and spend the first conversation testing it. If the pain is real and funded, I move to a demo that's built around what they told me. I don't show features — I show consequences. From there I'm managing the buying process, not reacting to it. Deals close when the buyer has no more unanswered questions.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-10",
+      "front": "Tell me about a deal you recently closed. (opening move)",
+      "back": "Before I go in — when you ask that, are you more interested in how I sourced it, how I worked cross-functionally to get it over the line, or the biggest obstacle I had to overcome? I want to make sure I give you what's actually useful.\n\n[Wait. They'll likely say \"obstacle.\" Below is the obstacle version.]",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-11",
+      "front": "Tell me about a deal you recently closed. (ColdIQ — obstacle version)",
+      "back": "$25K MRR deal with ColdIQ — they're a cold email agency running outbound at scale for a few hundred client accounts. Annual contract, $300K ARR. Top deal I closed at Hypertide.\n\nSourced through a referral. They'd been watching us in the market for about six months and reached out after one of their peers — smaller agency in our customer base — talked us up at an event. So they came in warm but skeptical, because they're not naive buyers. They sell outbound services. Their team understands deliverability infrastructure better than 99% of our prospects.\n\nThe obstacle was build-vs-buy. They had two engineers internally who'd already started prototyping their own deliverability stack. Their CTO was making the case that infrastructure was core IP — they should own it, not rent it. And honestly, his case wasn't wrong on the technical merits. They could have built something that worked.\n\nMost reps in this situation try to win the technical argument. That was the trap. I wasn't going to out-engineer their CTO in a sales conversation, and trying to would have made me look defensive.\n\nSo I reframed the conversation away from 'can you build it' to 'what does it cost to maintain it.' Pulled together a 12-month TCO analysis with their head of operations — engineer salary loaded cost for the two engineers they'd dedicate, opportunity cost of those engineers not building product features that drove client revenue, plus the ongoing infrastructure spend on warming pools, monitoring, and ISP relationships.\n\nThe build number landed somewhere around $650-750K fully loaded for year one. Our number was $300K ARR with no engineering opportunity cost.\n\nThen I made the strategic argument that mattered most to their CTO specifically — deliverability infrastructure isn't core IP for an agency. Their core IP is their playbook, their messaging frameworks, their client outcomes. Infrastructure is plumbing. Plumbing should be bought, not built, unless plumbing is the product. That reframe changed the conversation. He stopped defending the build and started thinking about where his engineers should actually be deployed.\n\nMulti-threaded across five stakeholders. CEO as economic buyer — cared about agency margins and growth. CTO as technical gate — needed to be brought along on the build-vs-buy decision. Head of operations as day-to-day champion — she was the one drowning in deliverability problems and pushing internally for a fix. Their head of client services — needed reassurance that we wouldn't introduce risk to existing client campaigns. And procurement late-stage on commercial terms.\n\nCycle ran about 75 days end-to-end. Held the line on price — no per-mailbox discount, no annual prepay discount. Conceded on a 90-day onboarding white-glove engagement and gave them a dedicated solutions engineer for the migration period. The white-glove was real money but it was the right trade — they were migrating live client campaigns and the risk was real, so the concession bought us trust at the right moment.\n\nThe bigger win wasn't the deal itself. It was that ColdIQ became the most credible reference customer in the agency segment. They tweet, they post on LinkedIn, they speak at events. Two more agency deals closed in the next four months citing them by name. The TCO analysis I built with them became the template I used for every build-vs-buy conversation after that — and I had at least four of those in the next quarter.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-12",
+      "front": "How do you build pipeline?",
+      "back": "I pick up the phone and dial. I don't wait for inbound. I built a referral engine at Hypertide — obsessed over our top 10 clients until they became our best outbound channel. In a PLG motion like yours, I'd treat the organic signups the same way — tier them fast, get on the phone with the ones that fit ICP, and create urgency before they go cold. The reps who wait for marketing to qualify leads are the ones on PIP.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-13",
+      "front": "How do you handle objections?",
+      "back": "I don't fight objections — I reframe them. If someone says 'we don't have budget,' an amateur panics. I ask 'what would need to be true for this to be a priority?' That reframes from budget to value. The goal is to make the buyer articulate why the cost of inaction is higher than the cost of the solution. Once they say it, you're not selling anymore — they're buying.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-14",
+      "front": "Tell me about a deal you lost.",
+      "back": "Lost a six-figure deal at RemoteLock — post-mortem told me I moved to demo too fast. I had pain, but I hadn't established the financial impact of that pain. When procurement got involved, I had no business case built, just a champion who liked us. I hadn't given them what they needed to sell internally. I changed my process after that — I don't leave any discovery call without getting a number tied to the problem.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-15",
+      "front": "What are you looking for in your next role?",
+      "back": "Three things, in order.\n\nFirst — a real seat. Defined product, defined ICP, real territory. I want to walk in on day one knowing who I'm selling to and what I'm selling, instead of building the enginge from scratch. I've done the build. Now I want to execute.\n\nSecond — a quota I can grow into. I'm not looking to hit number on day one and coast. I want to be in the top quartile by year two and the top rep by year three. That means a quota that's aggressive enough to be worth winning. If your top AE is clearing $250K-plus, that's a signal the seat is built right.\n\nThird — somewhere I stay 3 to 5 years. My resume reads like a jumper, and I'm not pretending it doesn't. The reason it reads that way is two of the three moves were forced — Latch was a layoff, RemoteLock was a market collapse. Hypertide was a deliberate calibration, and it's the last one I want to make for a while. The thing I'm optimizing for now isn't 'is this interesting' — it's 'is this where I'll still be in 2029.'\n\nBeyond that, I'm not picky. I want a manager who has opinions about my process and isn't afraid to give them. I want peers who are good enough that I have to raise my game to keep up. And I want the comp structure to reward the top performers, not flatten everyone to the median. If the seat is built right, everything else follows.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-16",
+      "front": "Where do you see yourself in 3-5 years?",
+      "back": "Honestly? I want to be the best AE in the segment. I'm not chasing a manager title — the best reps I know make more than their managers and have more freedom. In 3-5 years I want a full pipeline, a strong book, and to be the person new reps study. After that, maybe leadership makes sense — but I'd build it from a position of being the best, not as an escape from quota.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-17",
+      "front": "How do you handle a bad month?",
+      "back": "I audit the pipeline. A bad month is usually a signal from 60-90 days ago — bad discovery, wrong accounts, or I let something stall without urgency. I don't treat it emotionally. I figure out where the process broke, fix it, and make sure I don't repeat it. The only real mistake is a bad month you don't learn from.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-18",
+      "front": "What does good coaching look like?",
+      "back": "Specific and deal-based. The managers who made me better weren't cheerleaders — they were in my calls, pointing to the exact moment I left value on the table. 'You moved to demo before you had financial impact' is useful. 'Keep up the great work' is not. I want a manager who has opinions about my process and isn't afraid to give them.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-19",
+      "front": "What questions do you have for me?",
+      "back": "1. \"What's the skill gap between your top rep and your average rep right now?\"\n\n2. \"What made you say yes to taking this call with me specifically?\"\n\n3. \"What would need to happen in the first 90 days for you to feel like this was a great hire?\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-20",
+      "front": "You've been Head of Growth at Hypertide for ~12 months. Why are you looking already?",
+      "back": "1. \"Two reasons. First — I came in without equity. Made that trade deliberately at hire because I wanted cash and end-to-end ownership over a piece of the cap table. Twelve months in, that bet paid off in what I built. But the company's success doesn't accrue to me the way it would for a founder or an early hire with equity. I don't regret the trade I made — I wouldn't make it again at this stage of my career.\nSecond, the role's at an inflection. I built the engine — defined the ICP, built the workflow stack, ran the motion solo. The next twelve months at Hypertide is hiring reps and managing them. That's a CRO path, and that's not where I want to be next.\nBottom line — I want to keep selling. Bigger deals, defined product, real territory.\"\n\n2. \"Honest answer — those things don't contradict for me, even though I get why they look like they do. Company doing well and me wanting to stay are two different questions.\nFirst — I came in without equity. Took that trade deliberately, but the company's upside doesn't accrue to me. Wouldn't make that trade again now that I've proven I can deliver.\nSecond — role's at an inflection. I built the engine. The next year is hiring and managing reps. That's a CRO path, not where I want to be next.\nThe simplest version: what's good for Hypertide and what's good for me are pointing different directions right now. Smart move is to take what I learned and apply it as a closer in a more mature seat.\"\n\n3. \"Different reasons than RemoteLock. Hypertide's been a good run — I came in when it was zero revenue, built the GTM motion, and we're at $735K MRR with me as the only seller. I'm proud of what we built.\nThe honest answer for why I'm leaving comes down to two things. First, I came in without equity. At the time it was the right call — I wanted the cash and the scope and I was betting on myself, not on the company. Twelve months in, I've proven the thesis and I think it's the right moment to take what I've learned and apply it somewhere with proper economics. I don't regret the trade I made going in, but I wouldn't make it again at this stage of my career.\nSecond, the role has hit a natural inflection. I was hired to build the engine from scratch — figure out ICP, build the motion, run it solo. I've done that. The next chapter is hiring a team, managing reps, building a go-to-market org. That's a CRO path, and that's not what I want next. I want to keep selling — bigger deals, defined product, real territory, mature playbook. That's the seat I'm looking for, and that's why this role caught my attention.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-21",
+      "front": "Head of Growth → AE is a step back. Walk me through that.",
+      "back": "I don't see it as a step back — I see it as picking the right seat. At Hypertide I owned the entire revenue function but had to be five things at once: prospecting, discovery, closing, onboarding, CS. That's not where I'm most dangerous.\n\nI want to be 100% in the closer seat with a defined product and a real territory. The reps I respect most aren't chasing manager titles — the best ones make more than their managers and have more freedom. I want to be the best AE in your segment first. Leadership, if it makes sense later, comes from being the best — not from escaping quota.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-22",
+      "front": "Were you let go, is the company struggling, or is this proactive?",
+      "back": "Proactive, and the founder doesn't know yet. I want to be straight about that — I'm not going to bring it to him until I have a real offer in front of me. He deserves a real conversation, not a hypothetical one, and our relationship is good. I worked with him on contract before this role, so the trust is there.\n\nThe company isn't struggling — we've grown MRR steadily and the business is in a healthy spot. This is me making a deliberate move based on where I want to be in three to five years, not a reaction to anything happening at Hypertide.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-23",
+      "front": "What's Hypertide's runway?",
+      "back": "They're in a healthy spot — we've been growing MRR steadily and the founder's been thoughtful about burn. Honestly though, I'm leaving for my own reasons, not because of where the company is financially. I'm not going to pretend I have full visibility into the founder's fundraising plans — that wasn't my lane. My lane was revenue, and the revenue picture is good.\n\n[If they push:] \"I'd rather not speculate on numbers I don't have full visibility into. What I can tell you is the business has real customers, real MRR, and the founder is running it responsibly. Me leaving isn't a signal about the company — it's a signal about what I want next in my career.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-24",
+      "front": "Why don't you ride Hypertide to Series A?",
+      "back": "Two reasons. The first is the equity piece I mentioned — without it, the Series A outcome doesn't change my life the way it would change the founder's. So the math of 'stay and wait for the exit' isn't really there for me.\n\nThe second is more about what the next year actually looks like. I built the engine. The next chapter is hiring reps, managing a team, building processes for other people to execute. That's important work, but it's not the work I want to be doing for the next three years. I want to keep closing deals, not coach other people through them.\n\nIf I had equity at hire, I might be having a different conversation — but even then, the role itself is heading somewhere I don't want to go. So when you ask why not ride it out — honestly, because what's good for the company and what's good for me are pointing in different directions right now. The smart move is to take what I learned building this and apply it as a closer in a more mature seat.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-25",
+      "front": "In four years, three jobs, looking for a fourth. What's the pattern?",
+      "back": "Each move had a specific reason. Latch — Jamie Siminoff came in as CEO and cleared the sales team. I was part of that layoff along with everyone else on revenue. RemoteLock — the multifamily macro cratered. Capital markets dried up, rates were high, construction paused, and at the same time a trusted contact offered me cash and scope to build a GTM motion from zero. Hypertide — swing I took without equity, role's evolving away from selling, and it's run its course.\n\nThree different reasons. Two were externally driven, one was a deliberate calibration. None of them were 'I got bored' or 'the grass looked greener.'\n\nWhat I'm looking for now is the opposite of that pattern. Real product, defined ICP, mature playbook, proper economics. The criterion I'm using isn't 'is this interesting' — it's 'is this where I'll still be in 2029.'",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-26",
+      "front": "Why an AE seat, not another Head of Growth?",
+      "back": "Because I want to close, not manage. At Hypertide I wore five hats — prospecting, discovery, closing, onboarding, CS — and the hats that aren't pure selling eat into revenue-generating time. I've proven I can build the system. Now I want to be 100% in the closer seat.\n\nAnother Head of Growth role at an early-stage startup would be the same trade I just made — wear five hats, build from scratch, no playbook. I've done that. What I haven't done is close at scale inside a mature org with a defined product and a real territory. That's the athlete I want to become next, and that's an AE seat, not a Head of Growth seat.\n\nThe reps I respect most aren't chasing manager titles. The best ones make more than their managers and have more freedom. I want to be the best AE in your segment first.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-03b",
+      "front": "What does a Head of Growth do? (full breakdown)",
+      "back": "In a startup context, it means I owned the number end to end — generated pipeline, ran the full sales cycle, managed onboarding, made sure customers stayed and expanded. I was the entire revenue function in one seat.\n\nPractically, that meant four buckets of work. One — building the GTM motion itself: defining ICP, building the prospecting and enrichment stack on Clay and n8n, running outbound. Two — full-cycle selling: discovery, demos, negotiation, close. Three — customer success and expansion: onboarding new accounts and growing the ones that landed. Four — the systems work: building the AI-augmented workflows that let one person cover the volume we were running.\n\nIt's why I'm here, honestly. I've proven I can build it from scratch, but I want a team around me and a dedicated patch where I can just sell.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-27",
+      "front": "Walk me through $30K → $340K MRR month by month.",
+      "back": "Starting point was about $30K MRR — five or six early customers the founder had closed. We're at $340K MRR now, twelve months in, across roughly 500 customers.\n\nFirst 90 days were infrastructure. I'll get into the specifics if you want, but the headline is: I came in, the founder had product-market signal at small scale, but no GTM motion. No defined ICP, no outbound, no qualification framework. So before I closed anything new, I built the engine.\n\nMonths four through eight we ran steady-state — about 40-50 new customers a month, mostly SMB at $300-500/month on monthly contracts. That's where the customer count built.\n\nThe MRR really jumped in the back half because two enterprise deals landed — one at $30K/month around month nine, another at $25K/month around month eleven. Those had been in pipeline since I joined but they're 60-90 day cycles with real buying committees.\n\nTwelve months in: $340K MRR, 500-plus customers, top deal at $30-35K/month.\n\n[Updated curve if pushed: Start $30K → Month 3 $75K → Month 6 $155K → Month 9 $275K → Month 12 $340K]",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-28",
+      "front": "Hypertide team size — were you really the only seller?",
+      "back": "Ten people total. Me on revenue, the founder, and the rest were engineering and product. I was the only seller. The founder still helped occasionally on big enterprise deals where having him in the room moved things forward — that's normal at this stage — but the day-to-day motion was mine. No SDRs, no marketing support, no sales engineer. Which is why the systems work mattered — there's no way one person covers 500-customer volume without real automation underneath.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-29",
+      "front": "Who's the ICP? What does Hypertide sell?",
+      "back": "Hypertide is cold email deliverability SaaS. We solve the 'your emails are landing in spam' problem for outbound teams.\n\nICP is companies running outbound at scale — agencies, lead-gen shops, sales teams at B2B SaaS companies. Anywhere there's a heavy outbound motion and inbox placement is the bottleneck on revenue.\n\nPricing: SMB tier is $300-500/month — solo operators and small agencies running their own domains. Mid-market is $3-5K/month for in-house outbound teams managing dozens of mailboxes. Enterprise is $25-35K/month for the agencies and lead-gen platforms running outbound at massive scale across hundreds of clients.\n\nWe compete with Smartlead, Instantly, and a few others in the space. The wedge is reliability and infrastructure — when deliverability dies, our customers' revenue dies, so we get paid for being the layer they trust most.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-30",
+      "front": "Tell me about the Willow Bridge $96K deal.",
+      "back": "Before I go into it — when you ask that, are you more interested in how I sourced it, how I worked cross-functionally to get it over the line, or the biggest obstacle I had to overcome? I want to make sure I give you what's actually useful.\n\nThe customer was Willowbridge — one of the largest multifamily developers in the country. The multi-threading map had four key stakeholders: the VP of Operations as the economic buyer who cared about portfolio-wide ROI and standardization, the Director of IT as the technical buyer focused on integration with their existing PMS stack, a regional property manager as the day-to-day champion who'd been burned by a competitor before, and procurement late-stage on commercial terms.\n\nOn the product delay — I got ahead of it rather than letting it surface in a procurement review. About midway through the cycle I called the VP directly and told him what was slipping and why, because the worst version of that conversation is the one where the customer finds out from their implementation manager. What kept the deal alive was reframing the timeline as a phased rollout rather than a delay — we structured the contract so they started with the properties where we were ready and added the rest as the product caught up, which actually mapped better to how they wanted to deploy anyway.\n\nOn concessions — I extended payment terms to align billing with the phased rollout and threw in implementation services on the back-half properties, but I held the line on price. The cycle ran about seven months, which is long for a $96K booking but appropriate for a multi-stakeholder enterprise account in multifamily. On implementation status — first phase went live on schedule, the back-half properties are rolling out now as the product features land. I'd call it a recovery story, not a clean win — but the customer is expanding, which is the only number that actually matters.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-31",
+      "front": "How do I know you'll stay 18-24 months?",
+      "back": "Honest answer — you don't, and anyone who promises you they'll stay is either lying or hasn't thought about it hard enough. What I can tell you is why the pattern existed and why it ends here.\n\nLatch I left because the company was in real trouble — restated financials, SEC matter, leadership turnover. That wasn't a me problem, that was a boat-taking-on-water problem. RemoteLock I left because the multifamily macro cratered my pipeline and a trusted contact offered me cash and scope to build something. Hypertide I'm leaving because I came in without equity, the role is shifting from builder to manager, and I want to close, not coach.\n\nThree different reasons. None of them were 'I got bored' or 'the grass looked greener.' Each one was a specific decision based on what was happening in front of me.\n\nWhat I'm looking for now is the opposite of that pattern. Real product, defined ICP, mature playbook, proper economics, a quota I can grow into. If I'm sitting in that seat, I'm not going anywhere — because the reason I keep moving is I keep landing in seats that aren't built for the next three to five years of my career. I'm being selective right now precisely because I don't want to do this again.\n\nThe honest test isn't what I tell you in this room. It's whether the seat itself gives me a reason to stay. So the better question might be — what's your average AE tenure, and what made the last person leave? If your top reps are staying four-plus years and clearing serious money, I'll be one of them. If they're churning out at 18 months, that's a signal about the seat, not the candidate.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-32",
+      "front": "Why did you leave RemoteLock?",
+      "back": "Honest answer — a few things lined up. The biggest was macro. By late 2024 / early 2025, capital markets had dried up, rates were high, and multifamily construction was getting put on hold across the board. My pipeline was directly tied to new construction and renovation projects, and a lot of that froze. I wasn't the only one feeling it — the whole multifamily proptech space was getting hit.\n\nAround the same time, one of my counterparts on the team got let go, and my manager asked me to absorb his territory until they backfilled. That had happened to me once before, about a year earlier, and I'd taken the hit on my own number because I was effectively account-managing his book instead of selling into mine. When it came up a second time, I knew the pattern — and I had a real opportunity in my back pocket.\n\nThe founder of Hypertide was someone I'd done contract work for a few years back, and we'd stayed in touch. He came to me with cash and the chance to build a GTM motion from zero — which was something I'd been wanting to learn. I'd been at RemoteLock for almost two years, hit 111% in a normal market, and I felt like the next chapter for me wasn't going to be at RemoteLock given where the macro was. So I took the bet.\n\nMacro context:\n• Interest rates went up (Fed hiked aggressively 2022-2024)\n• Capital markets dried up — multifamily developers couldn't get cheap debt to finance new projects\n• New construction paused — fewer new buildings = fewer new buyers for access control hardware\n• Renovation budgets froze — existing property owners stopped retrofitting",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-33",
+      "front": "YTD attainment when you left RemoteLock?",
+      "back": "Through the months I was there in 2025, I was tracking below quota — I think I was at around [X]% YTD when I gave notice. Context matters though: the team as a whole was off pace. [If you know team attainment, say it.] My manager would tell you the same — the pipeline that had been there in 2024 just wasn't replenishing in 2025 because of where rates and construction were.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-34",
+      "front": "Will Aaron take a reference call?",
+      "back": "100%. Happy to put you in touch.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-35",
+      "front": "What did you do in your first 90 days at Hypertide?",
+      "back": "Three workstreams ran in parallel. Goal was to walk out of day 90 with a repeatable motion, not just a few closed deals.\n\nFirst — ICP and TAM work. Founder had closed 5-6 customers but the pattern wasn't documented. I ran a 30-customer interview cycle: 5 closed, 10 churned/lost, 15 prospects who'd ghosted. Pulled the firmographics, the trigger events, the language they used to describe the problem. What came out was a tight ICP definition — outbound-heavy B2B teams between 5 and 200 mailboxes, agencies and lead-gen shops over-indexing. Built the TAM model on top of that — pulled signal from BuiltWith, LinkedIn, Apollo, Clay enrichment chains — landed at roughly 40K accounts in the addressable universe. That's the universe I built outbound against.\n\nSecond — the prospecting and enrichment stack. Built it on Clay and n8n. Trigger inputs were domain-level signals — companies posting SDR jobs, companies running tools that indicated outbound motion, intent data from G2 and Cognism. Enrichment pulled mailbox count, tech stack, recent funding, growth signals. AI scoring through Claude ranked accounts by fit. Output went into HubSpot and triggered AI-personalized sequences — three-touch cadence, each touch researched and written per-account, not blasted. The whole stack ran daily without me touching it after week six.\n\nThird — qualification framework and CRM hygiene. Wrote the discovery questions, defined what 'qualified' meant — real pain, budget conversation, decision-maker named, or it stays unqualified. Set up the pipeline stages with exit criteria for each stage. So when forecasts went up to the founder, they were actually based on something.\n\nBy end of day 90 we'd closed about $25K in new MRR, but the bigger deliverable was the engine. Months 4-12 were just running it.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-36",
+      "front": "Does the founder know you're looking?",
+      "back": "Not yet. I want to make sure I'm having serious conversations with the right next opportunity before I bring it to him. He deserves a real conversation, not a hypothetical one. When I have an offer I'm seriously considering, that's when I'll talk to him.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-37",
+      "front": "Why no equity? Why didn't you negotiate for it?",
+      "back": "Honestly, I prioritized cash and scope going in. I'd just left a stable W-2 at RemoteLock and I needed the cash to make the move work, plus the chance to own GTM end-to-end was the real draw. In hindsight I should have pushed harder on equity — that's a lesson learned. But it's also why I'm being thoughtful about my next move.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-38",
+      "front": "What would Hypertide have to do to keep you?",
+      "back": "At this point, probably nothing. If they'd given me equity at hire, I might be having a different conversation, but the role itself is already past where I want to be — I want to close, not manage. Even with retention equity, the role wouldn't be the right fit for what I want next.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-39",
+      "front": "Are you actively interviewing or is this exploratory?",
+      "back": "Active and selective. I'm not in a rush — Hypertide is a fine seat to be in while I find the right next thing. But I'm having real conversations with companies where the role is the right fit, and yours is one of them.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-40",
+      "front": "Five Whys of discovery?",
+      "back": "1. Why are we here today?\n2. Why are you interested in solving x?\n3. Why is that a problem?\n4. Why now and not 6 months ago?\n5. Why us and not (alternative)?",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-41",
+      "front": "MEDIC?",
+      "back": "Metrics — What goals do you want to accomplish / what KPIs are you using to measure them?\nEconomic buyer — Who makes the buying decisions\nDecision criteria\nDecision process\nIdentify pain\nChampion\nCompetition",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-42",
+      "front": "Where do deals get stuck for you?",
+      "back": "Two places, and I've gotten clearer on both over the last 18 months.\n\nFirst — late-stage when I haven't multi-threaded early enough. If I've built strong rapport with one champion but haven't pulled in the other stakeholders by the time procurement shows up, the deal stalls. Champion can sell internally, but they can't get the deal across the finish line alone. Lost a six-figure deal at Hypertide because I had a great champion in the head of operations but I'd never met the CFO until week 10 of a 12-week cycle. By then I had no time to build the business case in language she cared about. Now I bring procurement and finance in by the second discovery call — costs me nothing on cycle time and removes the biggest late-stage death scenario.\n\nSecond — when I haven't pinned down a real, dollar-tied financial impact during discovery. If the buyer can articulate the pain but not the cost of the pain, the deal goes soft when budget conversations hit. I've gotten religious about this — I don't leave any discovery call without a number tied to the problem. 'How many hours a week is your team losing to this' or 'what's the revenue impact of campaigns that aren't landing.' If I can't get to a number, I know the deal will stall, and I'd rather know that in week one than week ten.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-43",
+      "front": "What's your closing technique?",
+      "back": "Honestly — by the time I'm closing, I'm usually not selling anymore. The buyer is.\n\nMy whole process is built around getting to that state. If I've done discovery right, the buyer has articulated the cost of inaction in their own words, named the competitors they've evaluated, mapped the buying committee, and walked through the implementation plan with me. By the time we get to a 'close call,' there are usually no surprises left. The conversation isn't 'are we doing this' — it's 'how are we structuring it.'\n\nThe technique I'd name if you forced me to pick one is the assumptive close, but not in the high-pressure way most people use it. I'll say something like 'so based on what we've talked about, the next step would be getting our procurement teams aligned on terms — what's the right way to set that up on your side?' That moves the deal forward without asking permission, but it doesn't manufacture urgency that isn't there.\n\nWhere I see most reps fail at closing is they treat it as a separate phase. They run discovery, run a demo, send a proposal, and then 'try to close.' That gap between proposal and close is where deals die — because something in the proposal triggered a question the buyer didn't have a way to ask, and now they're going dark.\n\nMy approach: I never let the buyer go more than 48 hours without a defined next step on the calendar. If they need internal time to think, fine — but the next conversation is on the calendar before we end the current one. Deals don't die because the buyer chose 'no.' They die because the buyer chose 'not now,' and 'not now' becomes 'never' if you don't keep the cycle moving.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-44",
+      "front": "Have you ever walked away from a deal? Tell me about it.",
+      "back": "Yes. And I've gotten better at doing it earlier.\n\nBest example — at RemoteLock, I had a $130K opportunity with a multifamily operator that had been in pipeline for five months. Champion was strong, technical fit was clean, budget was confirmed. Everything looked good on paper. But every meeting we set, the economic buyer had a 'scheduling conflict.' Every commitment to a next step came with a delay. The champion kept reassuring me it was happening — leadership was just busy.\n\nAround month four I stopped believing it. Pulled the champion into a direct conversation and asked: 'What's actually getting in the way? Because I've watched five meetings get rescheduled, and I'd rather know now if this isn't a real priority.' She admitted that the VP had quietly deprioritized the project after a budget reshuffling, but nobody wanted to officially kill it because she'd championed it internally.\n\nSo I walked. Pulled the deal out of forecast, pulled it out of pipeline, told her I'd be glad to re-engage when the priority changed but I wasn't going to keep chasing meetings that weren't happening. Lost the $130K logo for the year.\n\nEight months later she reached out. Their priorities had shifted, the project was funded, and she wanted to re-engage. We closed in six weeks because she'd already done all the internal work — and because I hadn't burned credibility by chasing.\n\nThe lesson I took: chasing a stalled deal hurts you twice. Once because it pulls time away from real opportunities, and once because it signals to the buyer that your time isn't valuable — which makes them respect the engagement less, not more. Walking away is sometimes the move that closes the deal.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-45",
+      "front": "How do you prioritize accounts (territory planning)?",
+      "back": "Three filters, applied in order.\n\nFirst filter: ICP fit. Not 'do they look like they could buy' — 'do they have the specific pain we solve, at a stage where they'd pay to solve it.' At Hypertide that meant outbound-heavy B2B teams with at least 15 mailboxes and an active sender footprint. Below that threshold the pain isn't acute enough; above that threshold they're already shopping. Anyone outside that band gets deprioritized regardless of how good the logo would look on a case study.\n\nSecond filter: trigger signals. Even within ICP, I'm watching for events that suggest now is the right moment. New SDR or BDR hires, recent funding, a competitor's deliverability issues showing up in operator communities, a PMM transition that signals new outbound strategy. ICP-fit accounts with active triggers get worked first.\n\nThird filter: deal velocity potential. I look at the buying committee structure — how many stakeholders, how much approval friction, what the typical procurement cycle looks like in their segment. A six-figure deal at a 50-person agency closes faster than the same deal at a 500-person enterprise. So I balance the book — a few high-velocity deals to drive monthly cadence, paired with a smaller number of strategic enterprise plays running in parallel on longer cycles.\n\nThe mistake I see most reps make is they prioritize on logo brand or deal size in isolation. They chase the biggest account in their territory because it 'feels right.' But if that account doesn't have ICP fit and an active trigger, they're spending three months on a deal that was never going to move — and missing five mid-tier deals that would've closed in the same window.\n\nMy rule: I'd rather own a smaller list of accounts I can actually work depth into than a 200-account territory I'm spraying across. Quality of attention beats coverage every time.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-46",
+      "front": "What's your first 30/60/90/180 day plan?",
+      "back": "\"Goal at every stage is the same — generate revenue. The plan is just about what generates revenue at each phase.\n\"Goal at every stage is the same — generate revenue. The plan is just what generates revenue at each phase.\nFirst 30 days — absorb, don't perform. Ride along with top reps, understand the product cold, learn what's working. The mistake most new reps make is prospecting in week one to look productive. That's premature.\n I'd rather spend the first 30 days getting smart enough that when I do open my mouth in front of a prospect, I sound like I've been there a year.\nDays 30-60 — build pipeline. Active discovery calls by week 6, first qualified opportunities by week 8. I'd also be benchmarking against the top reps — what's their average deal size, cycle length, win rate — so I have an internal target to track against, not just my manager's quota.\n\nDays 60-90 — first closes, or deals in late stage depending on cycle length.\n\nDays 90 to 180 — full ramp and pattern recognition. By day 180 I'd expect to be at full quota cadence, with a stable pipeline coverage ratio of 3-4x, and contributing back to the team — whether that's competitive intel, a refined discovery framework, or a playbook for a segment I'm seeing repeatedly. I'd also want to be in a position where new hires after me can learn from what I've documented, not just what they observe.\nThe honest answer though — every company I've joined has surprised me with where the real opportunity was. So I'd hold this plan loosely. My discipline is the absorb-build-execute sequence. The specific tactics get tuned to what I actually find when I get there.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-47",
+      "front": "What are your salary expectations?",
+      "back": "\"Honest answer — I want to talk number ranges if you do, but I'd rather make sure we're aligned on the role and the comp structure first.\nWhat I care about more than base is OTE and what realistic attainment looks like for top reps. A $150K base with $250K OTE that nobody hits isn't competitive with a $130K base with $230K OTE where the top quartile is clearing $300K because the plan rewards over-performance. So before I anchor on a number, I'd want to understand what the top quartile is actually taking home and what the variable plan rewards.\nThat said, to give you a real answer — I'm targeting $220-270K OTE for the right role, with the split being something like 60/40 or 70/30 base-to-variable. I want enough base to be stable, but I want real upside on top of it. If the plan has accelerators, that's a strong signal the company is built to pay top performers. If it's flat commission with no accelerators above 100%, that's a signal I should look elsewhere because the math doesn't reward the work.\nOne thing I won't apologize for — I'm motivated by money. Sales orgs that treat that as a red flag are usually orgs that don't actually pay well, and I've made my peace with that filter. The reps I respect most are the ones clearing $300K+, and that's the rep I want to become here.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-48",
+      "front": "Why do you want to work here?",
+      "back": "\"Three reasons. Your ICP — I've spent four years selling to [their buyer persona], so I ramp faster than someone learning the vertical from scratch. Your product — the wedge on [specific differentiator] is real, and I want to sell something where the buyer's reaction to a strong demo is 'how soon can we get started' instead of 'we'll think about it.' And the seat itself — defined ICP, real territory, mature playbook. I've spent the last year wearing five hats. I'm ready to be 100% in the closer seat.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-49",
+      "front": "Why should I hire you?",
+      "back": "\"Three things, in order.\nFirst — I can close. Four years, three companies, every seat I've been in I've been in the top quartile or top decile when the macro allowed. I'm not a process-only rep, I'm not a relationship-only rep. I'm the rep who can move deals through a defined cycle and close them at price.\nSecond — I bring more leverage than the typical AE. I've spent the last year building GTM systems that let one seller cover what would normally take a four-person team. I'm not going to deploy those systems on day one — I'd want to learn your motion first — but the muscle is there if you ever want to scale a seller's leverage rather than hire more sellers.\nThird — I'm not going anywhere. My resume reads like a jumper, and I get why. The honest read is two of three moves were forced — Latch was a layoff, RemoteLock was a market collapse. Hypertide was a deliberate calibration. What I'm looking for now is the seat where I stay 3-5 years, and if you hire me, that's the bet I'm making.\nThe honest version — I'm not the only person you could hire. There are good AEs out there. What I'd argue is I'm the highest-EV hire on a few dimensions specifically: I ramp faster because I know your buyer, I build leverage when it's useful, and I'm joining a seat I want to keep. If those three things matter for the role, I'm probably the best candidate in the pipeline. If they don't, there might be someone better-suited.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-50",
+      "front": "Why do you want to work in sales?",
+      "back": "\"Because sales is the only job I've ever had where the score is unambiguous. I came up at Latch's inside sales team, 22 years old, the new guy — and within a few months I was outperforming reps who'd been there for years. The leaderboard told me, not a perf review. That clarity was addictive. Beyond that — sales is the closest thing to running your own business while being employed. And\n\nAlso money - I want to be the rep who's clearing $300K+ in three years, not the one who's hoping for a 4% raise. That's not a value judgment on anyone else's path. It's just my path.\"\n\n\"Two reasons. Money — and you're lying if that's not number one. Sales is one of the few seats where outperformance compounds into real money, and I want to be the rep clearing $300K+ in three years.\nBut beyond that — I love the strategic dimension of selling, specifically discovery. The best discovery is the same skill as competitive chess or tennis. You're asking strategic questions to elicit strategic responses, anticipating where the buyer goes next, setting up the angle you want them to walk into. If you distill sales down to one skill, it's asking the right questions at the right time. That's the part I'd do whether I was getting paid or not.\"\nI play a lot of chess backgammon, tennis - anything where I can strategically set up an approach - right in tennis its thinking quick - im gonna hit it over there so he returns it here then there will be a gap here. Discovery is the same exact thing. It's asking strategic questions to elicit strategic responses. Which, if you're going ro distill sales down to one thing - it's asking the right questions at the right time.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-51",
+      "front": "What does it mean to be successful in sales?",
+      "back": "\"Most reps would say quota attainment. I'd push back on that — quota is tactical. Hitting it in one quarter doesn't tell you if you built a repeatable engine or got lucky on a deal.\nThe way I'd define it: three layers. Tactical — hitting your number with high forecast accuracy. Strategic — building a book that compounds through renewals, expansion, and referrals. Personal — closing deals you're proud of, for buyers you respect. Hit all three for years and you're the rep everyone studies.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-52",
+      "front": "What's your biggest achievement?",
+      "back": "Taking Hypertide from $30K MRR to $340K in 12 months as the only seller — but the achievement inside that story is the repositioning call. Killed the self-serve PLG motion in the first 60 days and replaced it with sales-led. I could have failed quietly — kept it alive, closed a few deals on the side, hit some intermediate number and nobody would have called it a failure. Instead I argued for tearing it down. That was a real risk on my part. The courage to make the call mattered more than the outcome.",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-53",
+      "front": "What's your biggest failure?",
+      "back": "\"Lost a six-figure deal at Hypertide because I'd never met the CFO. Had a strong champion who kept assuring me she'd brought the CFO along internally. When procurement showed up in the last week, the CFO came with three objections I'd never heard before — and the champion couldn't translate the value prop into her language. Deal died, closed three weeks later with a competitor.\nWhat I changed — I don't leave a cycle now without meeting the economic buyer directly by the second discovery call. If the champion resists, I push harder, because that resistance is the deal-killer signal. The real failure wasn't the deal though — it was that I'd had a similar miss at RemoteLock a year earlier. I learned the lesson, but not fully. It took losing the second deal to actually change the behavior.\"",
+      "favorited": false,
+      "queued": false
+    },
+    {
+      "id": "ip-54",
+      "front": "You've never been an enterprise AE before. What makes you think you can do that?",
+      "back": "Response 1:\n\n\"That question assumes the title 'Enterprise AE' is what makes someone capable of enterprise selling. It's not.\n\nMost enterprise AEs with the title are order takers. They inherited a named account list, had SDRs feeding them qualified meetings, had SEs running the technical demo, had CSMs running the relationship post-close. The AE was the guy in the middle following up on emails and updating Salesforce. That's not a shot — that's just how most enterprise orgs are structured. The title doesn't tell you if someone can sell.\n\nHere's what I've actually done. $300K ARR deal, seven-month cycle, five stakeholders including a CTO running a build-vs-buy objection I had to dismantle with a TCO analysis I built myself. Procurement. Legal. Held price. Multi-threaded the whole thing with no SE, no SDR, no support structure. At RemoteLock — 9 to 12 month cycles into VP of Ops and IT at large multifamily operators. Full committee, full legal review. 111% of an $800K quota.\n\nThe motion is enterprise. The title wasn't. That's the only gap.\n\nAnd honestly — the real risk in this hire isn't me. It's the candidate who has 'Enterprise AE' on their resume because they worked at Salesforce and processed inbound leads into a mature territory for three years. That person has the credential and not the skill.\n\nSo — what specifically about enterprise AE experience are you worried I'm missing? Name it and I'll tell you whether it's a real gap or a proxy for something you can actually verify right now.\"\n\n---\n\nResponse 2:\n\n\"Fair question. Let me push back on the framing a little.\n\nI closed a $300K ARR deal at Hypertide. Seven-month cycle, five stakeholders, procurement, legal, a build-vs-buy objection from a CTO. That's an enterprise sale. The startup title doesn't change what the motion looked like. At RemoteLock I ran 9-12 month cycles into multifamily — VP of Ops, IT, procurement, regional management. Same thing. Enterprise motion, startup wrapper.\n\nWhat I haven't done is carry a named enterprise territory at a company where that's the only thing I do. That's the gap. I own that.\n\nBut here's what I'd ask — what actually makes an enterprise AE? Is it the title, or is it the ability to navigate a complex buying committee, build a business case, hold price, and close? Because I've done all of that. The reps who struggle in enterprise are the ones who've never multi-threaded, never built a TCO, never lost a deal because they didn't find the CFO early enough. I've done all three.\n\nThe learning curve for me isn't 'how does enterprise work.' It's learning your specific buyers, your specific objection patterns, your specific competitive landscape. That's a 90-day problem, not a career problem.\"",
+      "favorited": false,
+      "queued": false
+    }
+  ]
+}
