@@ -21,6 +21,7 @@ export default function StudyPage() {
   const [cards, setCards] = useState([]);
   const [idx, setIdx] = useState(0);
   const [flipped, setFlipped] = useState(false);
+  const [shortMode, setShortMode] = useState(false);
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
@@ -38,15 +39,17 @@ export default function StudyPage() {
 
   const current = filtered[idx] ?? null;
 
-  const flip = useCallback(() => setFlipped((f) => !f), []);
+  const flip = useCallback(() => { setFlipped((f) => !f); setShortMode(false); }, []);
 
   const next = useCallback(() => {
     setFlipped(false);
+    setShortMode(false);
     setIdx((i) => (i + 1) % Math.max(filtered.length, 1));
   }, [filtered.length]);
 
   const prev = useCallback(() => {
     setFlipped(false);
+    setShortMode(false);
     setIdx((i) => (i - 1 + filtered.length) % Math.max(filtered.length, 1));
   }, [filtered.length]);
 
@@ -85,6 +88,7 @@ export default function StudyPage() {
     setFilter(f);
     setIdx(0);
     setFlipped(false);
+    setShortMode(false);
   }
 
   if (!deck) return null;
@@ -173,11 +177,26 @@ export default function StudyPage() {
                   className="card-face card-back-face rounded-xl border p-6 overflow-y-auto"
                   style={{ background: 'var(--surface2)', borderColor: 'var(--accent)', borderWidth: '1px' }}
                 >
+                  {current?.backShort && (
+                    <div className="flex justify-end mb-3" onClick={(e) => e.stopPropagation()}>
+                      <button
+                        onClick={() => setShortMode((s) => !s)}
+                        className="text-xs px-2.5 py-1 rounded border cursor-pointer"
+                        style={{
+                          background: shortMode ? 'var(--accent-dim)' : 'transparent',
+                          color: shortMode ? 'var(--accent)' : 'var(--muted)',
+                          borderColor: shortMode ? 'var(--accent)' : 'var(--border2)',
+                        }}
+                      >
+                        {shortMode ? '30s ✓' : '30s'}
+                      </button>
+                    </div>
+                  )}
                   <p
                     className="text-sm leading-relaxed"
                     style={{ color: 'var(--accent)', whiteSpace: 'pre-wrap', textAlign: 'left' }}
                   >
-                    {current?.back}
+                    {shortMode && current?.backShort ? current.backShort : current?.back}
                   </p>
                 </div>
               </div>
