@@ -34,6 +34,7 @@ export default function StudyPage() {
   const filtered = cards.filter((c) => {
     if (filter === 'queue') return c.queued;
     if (filter === 'favorites') return c.favorited;
+    if (filter.startsWith('day-')) return c.day === parseInt(filter.slice(4));
     return true;
   });
 
@@ -59,30 +60,10 @@ export default function StudyPage() {
       if (e.key === ' ') { e.preventDefault(); flip(); }
       if (e.key === 'ArrowRight') next();
       if (e.key === 'ArrowLeft') prev();
-      if (e.key === 's' || e.key === 'S') toggleFavorite();
-      if (e.key === 'q' || e.key === 'Q') toggleQueue();
     };
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
   }, [flip, next, prev, current]);
-
-  function patchCard(id, patch) {
-    if (!deck) return;
-    const updated = { ...deck, cards: deck.cards.map((c) => (c.id === id ? { ...c, ...patch } : c)) };
-    upsertDeck(updated);
-    setDeck(updated);
-    setCards((prev) => prev.map((c) => (c.id === id ? { ...c, ...patch } : c)));
-  }
-
-  function toggleFavorite() {
-    if (!current) return;
-    patchCard(current.id, { favorited: !current.favorited });
-  }
-
-  function toggleQueue() {
-    if (!current) return;
-    patchCard(current.id, { queued: !current.queued });
-  }
 
   function changeFilter(f) {
     setFilter(f);
@@ -108,21 +89,24 @@ export default function StudyPage() {
             {deck.name}
           </span>
         </div>
-        <Link
-          href={`/deck/${id}/manage`}
-          className="text-xs"
-          style={{ color: 'var(--muted)' }}
-        >
-          manage cards
-        </Link>
+        <div className="flex gap-3">
+          <Link href={`/deck/${id}/plan`} className="text-xs" style={{ color: 'var(--muted)' }}>
+            plan
+          </Link>
+          <Link href={`/deck/${id}/manage`} className="text-xs" style={{ color: 'var(--muted)' }}>
+            manage
+          </Link>
+        </div>
       </div>
 
       {/* Filter tabs */}
-      <div className="flex gap-1 mb-6 rounded-lg p-1" style={{ background: 'var(--surface)' }}>
+      <div className="flex gap-1 mb-6 rounded-lg p-1 flex-wrap" style={{ background: 'var(--surface)' }}>
         {[
           { key: 'all', label: `all (${deck.cards.length})` },
-          { key: 'queue', label: `queue (${deck.cards.filter((c) => c.queued).length})` },
-          { key: 'favorites', label: `starred (${deck.cards.filter((c) => c.favorited).length})` },
+          ...[...new Set(deck.cards.map((c) => c.day).filter(Boolean))].sort((a, b) => a - b).map((day) => ({
+            key: `day-${day}`,
+            label: `day ${day} (${deck.cards.filter((c) => c.day === day).length})`,
+          })),
         ].map(({ key, label }) => (
           <button
             key={key}
@@ -202,40 +186,6 @@ export default function StudyPage() {
               </div>
             </div>
 
-            {/* Card actions */}
-            <div className="flex items-center gap-4 mt-5 text-sm">
-              <button
-                onClick={toggleFavorite}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded cursor-pointer text-xs border"
-                style={{
-                  background: current?.favorited ? 'var(--accent-dim)' : 'transparent',
-                  color: current?.favorited ? 'var(--accent)' : 'var(--muted)',
-                  borderColor: current?.favorited ? 'var(--accent)' : 'var(--border2)',
-                }}
-                title="Star (S)"
-              >
-                {current?.favorited ? '★' : '☆'} star
-              </button>
-
-              <label
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded cursor-pointer text-xs border"
-                style={{
-                  background: current?.queued ? '#2a2000' : 'transparent',
-                  color: current?.queued ? 'var(--warn)' : 'var(--muted)',
-                  borderColor: current?.queued ? 'var(--warn)' : 'var(--border2)',
-                }}
-                title="Queue (Q)"
-              >
-                <input
-                  type="checkbox"
-                  checked={current?.queued ?? false}
-                  onChange={toggleQueue}
-                  className="sr-only"
-                />
-                {current?.queued ? '⊞' : '⊟'} queue
-              </label>
-            </div>
-
             {/* Navigation */}
             <div className="flex items-center gap-4 mt-6">
               <button
@@ -265,7 +215,7 @@ export default function StudyPage() {
       </div>
 
       <div className="mt-8 text-center text-xs" style={{ color: 'var(--border2)' }}>
-        space to flip · ← → navigate · s star · q queue
+        space to flip · ← → navigate
       </div>
     </div>
   );

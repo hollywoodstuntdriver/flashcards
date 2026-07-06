@@ -94,8 +94,6 @@ export default function Home() {
       ) : (
         <div className="flex flex-col gap-3">
           {decks.map((deck) => {
-            const queued = deck.cards.filter((c) => c.queued).length;
-            const faved = deck.cards.filter((c) => c.favorited).length;
             return (
               <div
                 key={deck.id}
@@ -114,8 +112,6 @@ export default function Home() {
                     )}
                     <div className="flex gap-3 mt-2 text-xs" style={{ color: 'var(--muted)' }}>
                       <span>{deck.cards.length} cards</span>
-                      {queued > 0 && <span style={{ color: 'var(--warn)' }}>⊞ {queued} queued</span>}
-                      {faved > 0 && <span style={{ color: 'var(--accent)' }}>★ {faved} starred</span>}
                     </div>
                   </div>
                   <div className="flex gap-2 shrink-0 items-center">
@@ -152,7 +148,7 @@ export default function Home() {
       )}
 
       <div className="mt-16 text-center text-xs" style={{ color: 'var(--border2)' }}>
-        space to flip · ← → to navigate · s to star · q to queue
+        space to flip · ← → to navigate
       </div>
     </div>
   );

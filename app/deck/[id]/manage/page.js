@@ -92,6 +92,10 @@ export default function ManageDeck() {
         <span className="text-xs tracking-widest uppercase" style={{ color: 'var(--accent)' }}>
           manage
         </span>
+        <span style={{ color: 'var(--border2)' }}>·</span>
+        <Link href={`/deck/${id}/plan`} className="text-xs" style={{ color: 'var(--muted)' }}>
+          plan
+        </Link>
       </div>
 
       {/* Deck meta */}
