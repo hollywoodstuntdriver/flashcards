@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { getDecks, upsertDeck, deleteDeck, initDefaults } from '@/lib/storage';
 import { defaultDecks } from '@/lib/defaultDecks';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Home() {
   const [decks, setDecks] = useState([]);
@@ -54,11 +55,12 @@ export default function Home() {
           <div className="text-xs tracking-widest uppercase mb-1" style={{ color: 'var(--accent)' }}>
             ◆ flashcards
           </div>
-          <h1 className="text-2xl font-bold" style={{ color: 'var(--text)' }}>
-            your decks
+          <h1 className="text-3xl font-bold" style={{ color: 'var(--text)', fontFamily: 'var(--font-heading), serif' }}>
+            Your Decks
           </h1>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
+          <ThemeToggle />
           <button
             onClick={() => importRef.current?.click()}
             className="px-3 py-1.5 text-xs rounded border cursor-pointer"
@@ -78,7 +80,7 @@ export default function Home() {
           <Link
             href="/new"
             className="px-3 py-1.5 text-xs rounded font-semibold"
-            style={{ background: 'var(--accent)', color: '#0d1117' }}
+            style={{ background: 'var(--accent)', color: '#fff' }}
           >
             + new deck
           </Link>
@@ -97,7 +99,7 @@ export default function Home() {
             return (
               <div
                 key={deck.id}
-                className="rounded-lg border p-4"
+                className="rounded-2xl border p-4 shadow-sm"
                 style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
               >
                 <div className="flex items-start justify-between gap-4">

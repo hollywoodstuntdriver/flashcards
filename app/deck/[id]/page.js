@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { getDeck, upsertDeck } from '@/lib/storage';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -23,6 +24,8 @@ export default function StudyPage() {
   const [flipped, setFlipped] = useState(false);
   const [shortMode, setShortMode] = useState(false);
   const [filter, setFilter] = useState('all');
+  const [editing, setEditing] = useState(false);
+  const [editText, setEditText] = useState('');
 
   useEffect(() => {
     const d = getDeck(id);
@@ -40,17 +43,40 @@ export default function StudyPage() {
 
   const current = filtered[idx] ?? null;
 
-  const flip = useCallback(() => { setFlipped((f) => !f); setShortMode(false); }, []);
+  const flip = useCallback(() => {
+    if (editing) return;
+    setFlipped((f) => !f);
+    setShortMode(false);
+  }, [editing]);
+
+  function startEdit() {
+    setEditText(current?.back ?? '');
+    setEditing(true);
+  }
+
+  function saveEdit() {
+    if (!deck || !current) return;
+    const updatedCards = deck.cards.map((c) =>
+      c.id === current.id ? { ...c, back: editText } : c
+    );
+    const updatedDeck = { ...deck, cards: updatedCards };
+    upsertDeck(updatedDeck);
+    setDeck(updatedDeck);
+    setCards((prev) => prev.map((c) => c.id === current.id ? { ...c, back: editText } : c));
+    setEditing(false);
+  }
 
   const next = useCallback(() => {
     setFlipped(false);
     setShortMode(false);
+    setEditing(false);
     setIdx((i) => (i + 1) % Math.max(filtered.length, 1));
   }, [filtered.length]);
 
   const prev = useCallback(() => {
     setFlipped(false);
     setShortMode(false);
+    setEditing(false);
     setIdx((i) => (i - 1 + filtered.length) % Math.max(filtered.length, 1));
   }, [filtered.length]);
 
@@ -89,13 +115,14 @@ export default function StudyPage() {
             {deck.name}
           </span>
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <Link href={`/deck/${id}/plan`} className="text-xs" style={{ color: 'var(--muted)' }}>
             plan
           </Link>
           <Link href={`/deck/${id}/manage`} className="text-xs" style={{ color: 'var(--muted)' }}>
             manage
           </Link>
+          <ThemeToggle />
         </div>
       </div>
 
@@ -149,20 +176,20 @@ export default function StudyPage() {
               <div className={`card-inner ${flipped ? 'flipped' : ''}`} onClick={flip}>
                 {/* Front */}
                 <div
-                  className="card-face rounded-xl border flex items-center justify-center p-8 text-center overflow-y-auto"
+                  className="card-face rounded-2xl border flex items-center justify-center p-8 text-center overflow-y-auto"
                   style={{ background: 'var(--surface)', borderColor: 'var(--border2)' }}
                 >
-                  <p className="text-base leading-relaxed" style={{ color: 'var(--text)' }}>
+                  <p className="text-lg leading-relaxed font-semibold" style={{ color: 'var(--text)', fontFamily: 'var(--font-heading), serif' }}>
                     {current?.front}
                   </p>
                 </div>
                 {/* Back */}
                 <div
-                  className="card-face card-back-face rounded-xl border p-6 overflow-y-auto"
+                  className="card-face card-back-face rounded-2xl border p-6 overflow-y-auto"
                   style={{ background: 'var(--surface2)', borderColor: 'var(--accent)', borderWidth: '1px' }}
                 >
-                  {current?.backShort && (
-                    <div className="flex justify-end mb-3" onClick={(e) => e.stopPropagation()}>
+                  <div className="flex justify-between items-center mb-3" onClick={(e) => e.stopPropagation()}>
+                    {current?.backShort && !editing && (
                       <button
                         onClick={() => setShortMode((s) => !s)}
                         className="text-xs px-2.5 py-1 rounded border cursor-pointer"
@@ -174,14 +201,57 @@ export default function StudyPage() {
                       >
                         {shortMode ? '30s ✓' : '30s'}
                       </button>
-                    </div>
+                    )}
+                    <div style={{ flex: 1 }} />
+                    {!editing ? (
+                      <button
+                        onClick={startEdit}
+                        className="text-xs px-2.5 py-1 rounded border cursor-pointer"
+                        style={{ color: 'var(--muted)', borderColor: 'var(--border2)', background: 'transparent' }}
+                      >
+                        edit
+                      </button>
+                    ) : (
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setEditing(false)}
+                          className="text-xs px-2.5 py-1 rounded border cursor-pointer"
+                          style={{ color: 'var(--muted)', borderColor: 'var(--border2)', background: 'transparent' }}
+                        >
+                          cancel
+                        </button>
+                        <button
+                          onClick={saveEdit}
+                          className="text-xs px-2.5 py-1 rounded border cursor-pointer font-semibold"
+                          style={{ color: 'var(--accent)', borderColor: 'var(--accent)', background: 'var(--accent-dim)' }}
+                        >
+                          save
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                  {editing ? (
+                    <textarea
+                      value={editText}
+                      onChange={(e) => setEditText(e.target.value)}
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-full text-sm leading-relaxed rounded-lg p-2 resize-none"
+                      style={{
+                        background: 'var(--surface)',
+                        color: 'var(--text)',
+                        border: '1px solid var(--border2)',
+                        minHeight: '220px',
+                        outline: 'none',
+                      }}
+                    />
+                  ) : (
+                    <p
+                      className="text-sm leading-relaxed"
+                      style={{ color: 'var(--accent)', whiteSpace: 'pre-wrap', textAlign: 'left' }}
+                    >
+                      {shortMode && current?.backShort ? current.backShort : current?.back}
+                    </p>
                   )}
-                  <p
-                    className="text-sm leading-relaxed"
-                    style={{ color: 'var(--accent)', whiteSpace: 'pre-wrap', textAlign: 'left' }}
-                  >
-                    {shortMode && current?.backShort ? current.backShort : current?.back}
-                  </p>
                 </div>
               </div>
             </div>

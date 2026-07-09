@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Flashcards — Notion UI Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --sidebar-bg: #f7f6f5;
+    --text: #37352f;
+    --muted: #9b9a97;
+    --border: #e9e9e7;
+    --hover: #f1f1ef;
+    --accent: #2383e2;
+    --accent-bg: #e8f0fc;
+    --star: #f5a623;
+    --warn-bg: #fef9ec;
+    --warn: #c17d10;
+    --surface: #f7f6f5;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+    --card-shadow-hover: 0 4px 12px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,0,0,0.08);
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 14px;
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── Sidebar ── */
+  .sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border);
+    padding: 12px 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-workspace {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .workspace-icon {
+    width: 24px;
+    height: 24px;
+    background: var(--text);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .sidebar-section {
+    padding: 0 8px;
+  }
+
+  .sidebar-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-bottom: 2px;
+  }
+
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13.5px;
+    color: var(--text);
+    text-decoration: none;
+    transition: background 0.1s;
+  }
+
+  .sidebar-item:hover { background: var(--hover); }
+  .sidebar-item.active { background: var(--hover); font-weight: 500; }
+
+  .sidebar-item-emoji { font-size: 15px; width: 20px; text-align: center; }
+
+  .sidebar-item-count {
+    margin-left: auto;
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--border);
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  /* ── Main ── */
+  .main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+
+  /* ── Topbar ── */
+  .topbar {
+    height: 44px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--muted);
+    flex-shrink: 0;
+  }
+
+  .breadcrumb { display: flex; align-items: center; gap: 6px; }
+  .breadcrumb span { color: var(--text); font-weight: 500; }
+
+  .topbar-actions { margin-left: auto; display: flex; gap: 6px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: background 0.12s;
+    font-weight: 500;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+  }
+  .btn-ghost:hover { background: var(--hover); color: var(--text); }
+
+  .btn-primary {
+    background: var(--text);
+    color: white;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-blue {
+    background: var(--accent);
+    color: white;
+  }
+  .btn-blue:hover { opacity: 0.88; }
+
+  /* ── Page content ── */
+  .page-content {
+    padding: 48px 60px;
+    max-width: 860px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .page-cover {
+    height: 160px;
+    background: linear-gradient(135deg, #e8f0fc 0%, #d4e8ff 50%, #c8f0e8 100%);
+    margin: -48px -60px 0;
+    margin-bottom: 0;
+    position: relative;
+  }
+
+  .page-title-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-top: 16px;
+  }
+
+  .page-emoji {
+    font-size: 48px;
+    line-height: 1;
+    margin-top: -32px;
+  }
+
+  .page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── Inline filters ── */
+  .view-bar {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .view-tab {
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--muted);
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    transition: all 0.1s;
+  }
+
+  .view-tab:hover { background: var(--hover); color: var(--text); }
+  .view-tab.active { background: var(--hover); color: var(--text); font-weight: 500; }
+
+  .view-sep { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+
+  .filter-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: transparent;
+    font-family: inherit;
+    transition: all 0.1s;
+  }
+  .filter-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Deck grid ── */
+  .deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .deck-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: box-shadow 0.15s, border-color 0.15s;
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .deck-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    border-color: transparent;
+  }
+
+  .deck-card-stripe {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+
+  .deck-card-emoji { font-size: 28px; margin-bottom: 10px; display: block; }
+
+  .deck-card-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--text);
+  }
+
+  .deck-card-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .deck-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .deck-card-meta .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-weight: 500;
+  }
+
+  .tag-blue { background: var(--accent-bg); color: var(--accent); }
+  .tag-yellow { background: var(--warn-bg); color: var(--warn); }
+  .tag-gray { background: var(--surface); color: var(--muted); }
+
+  .deck-card-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .deck-card-actions .btn { font-size: 12px; padding: 4px 10px; }
+
+  /* ── New deck card ── */
+  .deck-card-new {
+    border: 1.5px dashed var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+    color: var(--muted);
+    font-size: 13px;
+    gap: 8px;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .deck-card-new:hover { border-color: var(--accent); color: var(--accent); }
+  .deck-card-new .plus { font-size: 24px; }
+
+  /* ══════════════════════════════
+     STUDY VIEW (hidden by default)
+  ══════════════════════════════ */
+  #study-view { display: none; }
+
+  .study-page {
+    padding: 40px 60px;
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .study-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    cursor: pointer;
+  }
+  .study-breadcrumb:hover span { color: var(--accent); }
+  .study-breadcrumb span { transition: color 0.1s; }
+
+  .study-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+
+  .study-title {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .study-meta { font-size: 13px; color: var(--muted); margin-top: 4px; }
+
+  /* Progress bar */
+  .progress-bar-wrap {
+    background: var(--border);
+    border-radius: 99px;
+    height: 4px;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    width: 33%;
+    transition: width 0.3s;
+  }
+
+  /* Filter pills */
+  .filter-pills {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .pill {
+    padding: 5px 12px;
+    border-radius: 99px;
+    font-size: 12.5px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    transition: all 0.12s;
+    font-weight: 500;
+  }
+  .pill:hover { border-color: var(--text); color: var(--text); }
+  .pill.active { background: var(--text); color: white; border-color: var(--text); }
+
+  /* Flashcard */
+  .card-scene { perspective: 1200px; margin-bottom: 24px; }
+
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+
+  .card-inner.flipped { transform: rotateY(180deg); }
+
+  .card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .card-front {
+    background: var(--bg);
+    border: 1.5px solid var(--border);
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-back {
+    background: #f0f7ff;
+    border: 1.5px solid #c8dff7;
+    box-shadow: var(--card-shadow);
+    transform: rotateY(180deg);
+  }
+
+  .card-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .card-front .card-label { color: var(--muted); }
+  .card-back .card-label { color: var(--accent); }
+
+  .card-text {
+    font-size: 17px;
+    line-height: 1.55;
+    text-align: center;
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .card-back .card-text { color: #1a3a5c; font-size: 15px; text-align: left; }
+
+  .card-hint {
+    position: absolute;
+    bottom: 16px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  /* Nav controls */
+  .card-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .nav-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--muted);
+    transition: all 0.12s;
+    font-family: inherit;
+  }
+  .nav-btn:hover { border-color: var(--text); color: var(--text); box-shadow: var(--card-shadow); }
+
+  .flip-btn {
+    padding: 10px 28px;
+    border-radius: 8px;
+    background: var(--text);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 13.5px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: opacity 0.12s;
+  }
+  .flip-btn:hover { opacity: 0.85; }
+
+  .card-counter {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  /* Card actions */
+  .card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--muted);
+    font-family: inherit;
+    transition: all 0.12s;
+    font-weight: 500;
+  }
+  .action-btn:hover { border-color: var(--text); color: var(--text); background: var(--hover); }
+  .action-btn.active-star { border-color: var(--star); color: var(--star); background: #fff9ec; }
+  .action-btn.active-queue { border-color: var(--accent); color: var(--accent); background: var(--accent-bg); }
+
+  /* Keyboard shortcuts */
+  .kb-hints {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 28px;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  .kb-hints kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    font-size: 10.5px;
+    font-family: inherit;
+    color: var(--text);
+    margin-right: 3px;
+  }
+
+  /* Divider */
+  hr { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div style="padding: 0 12px; margin-bottom: 16px;">
+    <div class="sidebar-workspace">
+      <div class="workspace-icon">J</div>
+      Jason's Workspace
+    </div>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Library</div>
+    <a class="sidebar-item active" onclick="showDecks()">
+      <span class="sidebar-item-emoji">🗂️</span>
+      All Decks
+      <span class="sidebar-item-count">3</span>
+    </a>
+    <a class="sidebar-item" onclick="showStudy()">
+      <span class="sidebar-item-emoji">🎯</span>
+      Study Session
+    </a>
+    <a class="sidebar-item">
+      <span class="sidebar-item-emoji">⭐</span>
+      Starred Cards
+      <span class="sidebar-item-count">5</span>
+    </a>
+    <a class="sidebar-item">
+      <span class="sidebar-item-emoji">📋</span>
+      Review Queue
+      <span class="sidebar-item-count">8</span>
+    </a>
+  </div>
+
+  <div class="sidebar-section" style="margin-top: 8px;">
+    <div class="sidebar-label">Decks</div>
+    <a class="sidebar-item" onclick="showStudy()">
+      <span class="sidebar-item-emoji">💼</span>
+      Interview Prep
+    </a>
+    <a class="sidebar-item">
+      <span class="sidebar-item-emoji">📈</span>
+      Sales Frameworks
+    </a>
+    <a class="sidebar-item">
+      <span class="sidebar-item-emoji">🧠</span>
+      BTSG Principles
+    </a>
+  </div>
+
+  <div style="margin-top: auto; padding: 12px;">
+    <div class="sidebar-item" style="color: var(--muted); font-size: 12.5px;">
+      <span class="sidebar-item-emoji">⚙️</span>
+      Settings
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ═══════════ DECKS VIEW ═══════════ -->
+  <div id="decks-view">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="breadcrumb">
+        Library <span style="color:var(--border)">›</span> <span>All Decks</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost">Import JSON</button>
+        <button class="btn btn-primary" onclick="showStudy()">+ New Deck</button>
+      </div>
+    </div>
+
+    <div class="page-content">
+      <!-- Cover -->
+      <div class="page-cover"></div>
+
+      <!-- Title -->
+      <div class="page-title-block">
+        <div>
+          <span class="page-emoji">🗂️</span>
+          <div class="page-title">Your Decks</div>
+          <div class="page-subtitle">3 decks · 47 cards · last studied 2h ago</div>
+        </div>
+      </div>
+
+      <!-- View bar -->
+      <div class="view-bar">
+        <button class="view-tab active">Grid</button>
+        <button class="view-tab">List</button>
+        <div class="view-sep"></div>
+        <button class="filter-tag">Filter</button>
+        <button class="filter-tag">Sort ↕</button>
+      </div>
+
+      <!-- Deck grid -->
+      <div class="deck-grid">
+
+        <!-- Deck 1 -->
+        <div class="deck-card" onclick="showStudy()">
+          <div class="deck-card-stripe" style="background: linear-gradient(90deg, #2383e2, #5ba4f5);"></div>
+          <span class="deck-card-emoji">💼</span>
+          <div class="deck-card-name">Interview Prep</div>
+          <div class="deck-card-desc">Behavioral and technical questions for VP-level and growth roles.</div>
+          <div class="deck-card-meta">
+            <span class="tag tag-blue">21 cards</span>
+            <span class="tag tag-yellow">⭐ 5 starred</span>
+          </div>
+          <div class="deck-card-actions">
+            <button class="btn btn-ghost">Edit</button>
+            <button class="btn btn-blue" onclick="showStudy(); event.stopPropagation();">Study →</button>
+          </div>
+        </div>
+
+        <!-- Deck 2 -->
+        <div class="deck-card">
+          <div class="deck-card-stripe" style="background: linear-gradient(90deg, #0f7b6c, #37c4a8);"></div>
+          <span class="deck-card-emoji">📈</span>
+          <div class="deck-card-name">Sales Frameworks</div>
+          <div class="deck-card-desc">BTSG methodology, cold outreach patterns, objection handling.</div>
+          <div class="deck-card-meta">
+            <span class="tag tag-blue">18 cards</span>
+            <span class="tag tag-gray">⊞ 3 queued</span>
+          </div>
+          <div class="deck-card-actions">
+            <button class="btn btn-ghost">Edit</button>
+            <button class="btn btn-blue">Study →</button>
+          </div>
+        </div>
+
+        <!-- Deck 3 -->
+        <div class="deck-card">
+          <div class="deck-card-stripe" style="background: linear-gradient(90deg, #9b51e0, #c97cf5);"></div>
+          <span class="deck-card-emoji">🧠</span>
+          <div class="deck-card-name">BTSG Principles</div>
+          <div class="deck-card-desc">Core mindset, positioning, and deal mechanics from BowtiedSalesGuy.</div>
+          <div class="deck-card-meta">
+            <span class="tag tag-blue">8 cards</span>
+          </div>
+          <div class="deck-card-actions">
+            <button class="btn btn-ghost">Edit</button>
+            <button class="btn btn-blue">Study →</button>
+          </div>
+        </div>
+
+        <!-- New deck -->
+        <div class="deck-card-new" onclick="showStudy()">
+          <span class="plus">+</span>
+          <span>New deck</span>
+        </div>
+
+      </div>
+
+      <hr />
+      <div style="font-size: 12px; color: var(--muted); text-align: center;">
+        Tip: press <kbd style="border:1px solid var(--border); border-radius:3px; padding:1px 5px; font-size:11px; background:var(--surface);">space</kbd> to flip · <kbd style="border:1px solid var(--border); border-radius:3px; padding:1px 5px; font-size:11px; background:var(--surface)">←→</kbd> to navigate
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ STUDY VIEW ═══════════ -->
+  <div id="study-view">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="breadcrumb">
+        Library <span style="color:var(--border)">›</span> Interview Prep <span style="color:var(--border)">›</span> <span>Study</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="btn btn-ghost">Manage Cards</button>
+        <button class="btn btn-ghost" onclick="showDecks()">← All Decks</button>
+      </div>
+    </div>
+
+    <div class="study-page">
+      <!-- Header -->
+      <div class="study-header">
+        <div>
+          <div class="study-title">💼 Interview Prep</div>
+          <div class="study-meta">21 cards · 5 starred · 3 queued</div>
+        </div>
+        <div style="text-align:right; font-size:13px; color:var(--muted);">
+          7 / 21
+        </div>
+      </div>
+
+      <!-- Progress -->
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" style="width: 33%;"></div>
+      </div>
+
+      <!-- Filter pills -->
+      <div class="filter-pills">
+        <button class="pill active">All (21)</button>
+        <button class="pill">Starred (5)</button>
+        <button class="pill">Queue (3)</button>
+      </div>
+
+      <!-- Card counter -->
+      <div class="card-counter">7 of 21</div>
+
+      <!-- Flashcard -->
+      <div class="card-scene">
+        <div class="card-inner" id="flashcard" onclick="flipCard()">
+          <!-- Front -->
+          <div class="card-face card-front">
+            <div class="card-label">Question</div>
+            <div class="card-text">
+              Tell me about a time you took a product from $0 to meaningful revenue. What was your approach?
+            </div>
+            <div class="card-hint">Click to reveal answer</div>
+          </div>
+          <!-- Back -->
+          <div class="card-face card-back">
+            <div class="card-label">Answer</div>
+            <div class="card-text">
+              At Hypertide I inherited a product with no GTM motion. I built the ICP from scratch using outbound signals — identified staffing firms as the wedge, built a 3-touch sequence, and personally closed the first 12 accounts. $0 → $735k MRR in 14 months. The key was staying in the field early rather than delegating.
+            </div>
+            <div class="card-hint">Space to flip · ← → to navigate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="card-nav">
+        <button class="nav-btn">←</button>
+        <button class="flip-btn" onclick="flipCard()">Flip Card</button>
+        <button class="nav-btn">→</button>
+      </div>
+
+      <!-- Actions -->
+      <div class="card-actions">
+        <button class="action-btn active-star">⭐ Starred</button>
+        <button class="action-btn">⊟ Add to Queue</button>
+        <button class="action-btn">Skip</button>
+      </div>
+
+      <!-- Keyboard hints -->
+      <div class="kb-hints">
+        <span><kbd>Space</kbd> Flip</span>
+        <span><kbd>←</kbd><kbd>→</kbd> Navigate</span>
+        <span><kbd>S</kbd> Star</span>
+        <span><kbd>Q</kbd> Queue</span>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  function showDecks() {
+    document.getElementById('decks-view').style.display = 'block';
+    document.getElementById('study-view').style.display = 'none';
+    document.querySelectorAll('.sidebar-item').forEach((el, i) => el.classList.toggle('active', i === 0));
+  }
+
+  function showStudy() {
+    document.getElementById('decks-view').style.display = 'none';
+    document.getElementById('study-view').style.display = 'block';
+    document.querySelectorAll('.sidebar-item').forEach((el, i) => el.classList.toggle('active', i === 1));
+  }
+
+  function flipCard() {
+    document.getElementById('flashcard').classList.toggle('flipped');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === ' ') { e.preventDefault(); flipCard(); }
+  });
+</script>
+</body>
+</html>

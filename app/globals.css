@@ -1,15 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0d1117;
-  --surface: #161b22;
-  --surface2: #1e2530;
-  --border: #21262d;
-  --border2: #30363d;
-  --text: #e6edf3;
-  --muted: #8b949e;
-  --accent: #3fb950;
-  --accent-dim: #122820;
+  --bg: #FAF8F5;
+  --surface: #FFFFFF;
+  --surface2: #F0EDE8;
+  --border: #E8E4DE;
+  --border2: #D4CFC8;
+  --text: #1C1C1C;
+  --muted: #7A7470;
+  --accent: #7A9E6B;
+  --accent-dim: #EBF2E8;
+  --danger: #e05252;
+  --warn: #c28a1a;
+}
+
+.dark {
+  --bg: #0D0D0D;
+  --surface: #1A1A1A;
+  --surface2: #242424;
+  --border: #2A2A2A;
+  --border2: #383838;
+  --text: #F0EDE8;
+  --muted: #8A8480;
+  --accent: #8FB880;
+  --accent-dim: #1E2E1A;
   --danger: #f85149;
   --warn: #d29922;
 }
@@ -95,7 +109,7 @@ body::after {
 
 /* Input / textarea base */
 input, textarea {
-  color-scheme: dark;
+  color-scheme: light dark;
 }
 
 input::placeholder, textarea::placeholder {
@@ -105,5 +119,5 @@ input::placeholder, textarea::placeholder {
 input:focus, textarea:focus {
   outline: none;
   border-color: var(--border2) !important;
-  box-shadow: 0 0 0 2px rgba(63, 185, 80, 0.15);
+  box-shadow: 0 0 0 2px rgba(122, 158, 107, 0.15);
 }
